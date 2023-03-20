@@ -22,7 +22,6 @@ from pytorch_lightning.loggers import TensorBoardLogger
 # from PIL import Image
 from torchvision.models import resnet18
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 
 class Encoder(torch.nn.Module): 
