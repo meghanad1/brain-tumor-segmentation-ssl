@@ -3,8 +3,10 @@ from torch.utils.data import Dataset
 from torchvision.io import read_image
 import os
 from PIL import Image
+import SimpleITK as sitk
 # import nibabel as nib
 # import nilearn as nl
+
 
 root = r'/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData'
 
@@ -22,8 +24,9 @@ class BraTS2020_Dataset(Dataset):
         modality = self.modality_dict[modality]
         image_path = os.path.join(root, f'/BraTS20_Training_{patient_id}', f'/BraTS20_Training_{patient_id}_{modality}.nii.gz')
         
+        img = sitk.ReadImage(image_path)
         # img = Image.open(path)
-        img = read_image(image_path)
+        # img = read_image(image_path)
         return img
 
 
