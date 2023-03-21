@@ -18,10 +18,10 @@ class BraTS2020_Dataset(Dataset):
         patient_id, modality = divmod(idx, 4)
         patient_id = str(patient_id).zfill(3)
         modality = self.modality_dict[modality]
-        path = os.path.join(root, f'BraTS20_Training_{patient_id}', f'BraTS20_Training_{patient_id}_{modality}.nii.gz')
+        image_path = os.path.join(root, f'BraTS20_Training_{patient_id}', f'BraTS20_Training_{patient_id}_{modality}.nii.gz')
         
         # img = Image.open(path)
-        img = read_image(path)
+        img = read_image(image_path)
         return img
 
 
