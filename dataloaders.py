@@ -17,12 +17,12 @@ class BraTS2020_Dataset(Dataset):
         patient_id, modality = divmod(idx, 4)
         patient_id = str(patient_id).zfill(3)
         modality = self.modality_dict[modality]
-        path = os.path.join(root, f'BraTS20_Training_{patient_id}', f'BraTS20_Training_{patient_id}_{modality}.nii')
+        path = os.path.join(root, f'BraTS20_Training_{patient_id}', f'BraTS20_Training_{patient_id}_{modality}.nii.gz')
         
         img = Image.open(path)
         return img
 
 
-train_dataset = BraTS2020_Dataset()
-print('train_dataset',train_dataset)
-train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=0)
+# train_dataset = BraTS2020_Dataset()
+# print('train_dataset',train_dataset)
+# train_dataloader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=0)
