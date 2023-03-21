@@ -4,7 +4,7 @@ from torchvision.io import read_image
 import os
 from PIL import Image
 
-root = '/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData'
+root = r'/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData'
 
 class BraTS2020_Dataset(Dataset): 
     def __init__(self): 
