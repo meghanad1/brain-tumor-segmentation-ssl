@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 import os
 from PIL import Image
 
-root = './kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData'
+root = '/kaggle/input/brats20-dataset-training-validation/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData'
 
 class BraTS2020_Dataset(Dataset): 
     def __init__(self): 
