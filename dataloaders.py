@@ -1,5 +1,6 @@
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
+from torchvision.io import read_image
 import os
 from PIL import Image
 
@@ -19,7 +20,8 @@ class BraTS2020_Dataset(Dataset):
         modality = self.modality_dict[modality]
         path = os.path.join(root, f'BraTS20_Training_{patient_id}', f'BraTS20_Training_{patient_id}_{modality}.nii.gz')
         
-        img = Image.open(path)
+        # img = Image.open(path)
+        img = read_image(path)
         return img
 
 
